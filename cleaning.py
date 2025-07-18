@@ -19,7 +19,7 @@ def iqr_filter(data: DataFrame, col: str, rate: float = 1.5, inplace: bool = Fal
   removed = data.shape[0] - mask.sum()
   if verbose:
     print(f"{col}: removed {removed} outliers")
-    print(f"lower and upper bound: {lower_bound:.2f} - {upper_bound:.2f}")
+    print(f"lower and upper bound: {lower_bound:.2f} - {upper_bound:.2f} (rate {rate})")
     print('Remaining:', mask.sum(), '\n')
   if inplace:
     data.drop(index=data[~mask].index, inplace=True)

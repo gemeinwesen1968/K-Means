@@ -1,9 +1,6 @@
 import pandas as pd
 from pandas import DataFrame
-from sklearn.preprocessing import MinMaxScaler
 
-def print_row_amount(data):
-  print('amount of data points:', data.shape[0], '\n')
 
 def iqr_filter(data: DataFrame, col: str, rate: float = 1.5, inplace: bool = False, verbose: bool = False):
   if rate <= 0:
@@ -33,6 +30,8 @@ def one_hot_encoding(data: DataFrame, columns: list[str]):
   df_encoded[bool_cols] = df_encoded[bool_cols].astype(int)
   return df_encoded
 
-def scale_filter(data: DataFrame, columns: list[str]):
-  scaler = MinMaxScaler()
-  data[columns] = scaler.fit_transform(data[columns])
+from sklearn.preprocessing import StandardScaler
+
+def scale_filter(data, columns):
+    scaler = StandardScaler()
+    data[columns] = scaler.fit_transform(data[columns])

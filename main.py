@@ -80,7 +80,7 @@ def create_visual(data, pca, save_plots=True):
   else:
     plt.show()
 
-  To_Plot = ["Dt_Customer", "Age", "Parent", "Education_High", "Marital_Status_Partner", "Tot_Purchase"]
+  To_Plot = ["Dt_Customer", "Age", "Parent", "Education_High", "Education_Low", "Marital_Status_Partner", "Tot_Purchase", "Children"]
   for i in To_Plot:
     plt.figure()
     sns.jointplot(x=data[i], y=data["Tot_Mnt"], hue=data["Cluster"], kind="kde", palette="viridis", alpha=0.5)

@@ -1,3 +1,5 @@
+# temporary test file used to learn and plot preprocess graphs
+
 import pandas as pd
 import cleaning as cl
 import numpy as np
